@@ -38,7 +38,7 @@ npm install -g webpack
 npm install
 ```
 
-## ApiRoutes
+## Api Routes
 
 ### Object Schema
 
