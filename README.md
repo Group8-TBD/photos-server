@@ -40,19 +40,93 @@ npm install
 
 ## ApiRoutes
 
+### Object Schema
+
+#### Data Properties
+| Name       | Type   | Description                       |
+| ---------- |:------:| ---------------------------------:|
+| Unique ID  | Number | Unique ID for each Object.        |
+| prop ID    | Number | The ID number of a specific prop. |
+| images     | Arrayn | Array of Image objects.           |
+
+
+#### Data Sub-Properties
+| Name        | Type   | Description                                   |
+| ----------- |:------:| ---------------------------------------------:|
+| index       | Number | the index of each image object                |
+| url         | String | the url where the image orignates from        |
+| description | String | the image description that will render on app |
+
 ### GET
 
 ```sh
 /api/photos
 ```
+GET photo by prop ID example
 
-| Name     | Type   | Description                              |
-| -------- |:------:| ----------------------------------------:|
-| Prop ID  | Number | The ID number of a specific prop.        |
-| images   | Objec  | Contains Image url and image discription |
+```sh
+
+[ {prop ID: 1,
+   images: [ {index: 1,
+              url: {AWS.url.1},
+              description: {random description}
+              },
+              {index: 2,
+              url: {AWS.url.2},
+              description: {random description}
+              }]
+   },
+   {prop ID: 1,
+   images: [ {index: 1,
+              url: {AWS.url.1},
+              description: {random description}
+              },
+              {index: 2,
+              url: {AWS.url.2},
+              description: {random description}
+              }]},
+   }]           
+
+```
 
 ### POST
 
+```sh
+/api/photos
+```
+
+POST photo example
+
+```sh
+
+axios.post(/api/photos, {propID: Number, imageUrl: String, description: String} )
+
+```
+
 ### PUT
 
+```sh
+/api/photos
+```
+
+POST photo example
+
+```sh
+
+axios.put(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String} )
+
+```
+
 ### DELETE
+
+```sh
+/api/photos
+```
+
+POST photo example
+
+```sh
+
+axios.delete(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String} )
+
+```
