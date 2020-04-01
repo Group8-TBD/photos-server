@@ -14,6 +14,7 @@
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
+1. [API Routes](#ApiRoutes)
 
 ## Usage
 
@@ -37,3 +38,12 @@ npm install -g webpack
 npm install
 ```
 
+## ApiRoutes
+
+### GET
+
+### POST
+
+### PUT
+
+### DELETE
