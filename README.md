@@ -14,7 +14,7 @@
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
-1. [API Routes](#ApiRoutes)
+1. [API Routes](#Api Routes)
 
 ## Usage
 
@@ -41,6 +41,15 @@ npm install
 ## ApiRoutes
 
 ### GET
+
+```sh
+/api/photos
+```
+
+| Name     | Type   | Description                              |
+| -------- |:------:| ----------------------------------------:|
+| Prop ID  | Number | The ID number of a specific prop.        |
+| images   | Objec  | Contains Image url and image discription |
 
 ### POST
 
