@@ -40,7 +40,7 @@ npm install
 
 ## ApiRoutes
 
-### Object Schema
+### Object Format
 
 #### Data Properties
 | Name       | Type   | Description                       |
@@ -102,6 +102,13 @@ GET photo by prop ID example
 
 ```
 
+RESPONSE:
+```sh
+Status Code 200
+and
+array of objects (see example above)
+```
+
 ### POST
 
 ```sh
@@ -112,34 +119,47 @@ POST photo example
 
 ```sh
 
-axios.post(/api/photos, {propID: Number, imageUrl: String, description: String} )
+{propID: Number, imageUrl: String, description: String}
 
 ```
 
-### PUT
+RESPONSE:
+```sh
+Status Code 201
+```
+### UPDATE
 
 ```sh
-/api/photos
+/api/photos/id
 ```
 
-POST photo example
+PUT photo example
 
 ```sh
 
-axios.put(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String} )
+(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String}
 
+```
+
+RESPONSE:
+```sh
+Status Code 200
 ```
 
 ### DELETE
 
 ```sh
-/api/photos
+/api/photos/id
 ```
 
-POST photo example
+DELETE photo example
 
 ```sh
 
-axios.delete(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String} )
+{uniqueID: Number, propID: Number, imageUrl: String, description: String}
 
+```
+RESPONSE:
+```sh
+Status Code 200
 ```
