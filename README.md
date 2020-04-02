@@ -14,7 +14,7 @@
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
-1. [API Routes](#Api Routes)
+1. [API Routes](#ApiRoutes)
 
 ## Usage
 
@@ -38,7 +38,7 @@ npm install -g webpack
 npm install
 ```
 
-## Api Routes
+## ApiRoutes
 
 ### Object Schema
 
@@ -47,7 +47,7 @@ npm install
 | ---------- |:------:| ---------------------------------:|
 | Unique ID  | Number | Unique ID for each Object.        |
 | prop ID    | Number | The ID number of a specific prop. |
-| images     | Arrayn | Array of Image objects.           |
+| images     | Array  | Array of Image objects.           |
 
 
 #### Data Sub-Properties
@@ -56,6 +56,19 @@ npm install
 | index       | Number | the index of each image object                |
 | url         | String | the url where the image orignates from        |
 | description | String | the image description that will render on app |
+
+```sh
+Schema = {
+          uniqueID: Number,
+          propID: Number,
+          images: [{image}]
+          }
+          
+image: {index: Number,
+        url: String,
+        description: String
+        }
+```
 
 ### GET
 
