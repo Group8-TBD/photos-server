@@ -133,6 +133,7 @@ Status Code 201
 
 ```sh
 /api/properties/property_id
+/api/properties/image_index
 ```
 
 PUT property example
@@ -146,7 +147,7 @@ PUT property example
 
 ```sh
 
-{uniqueID: Number, propID: Number, imageUrl: String, description: String}
+{uniqueID: Number, propID: Number, index:Number, imageUrl: String, description: String}
 
 ```
 
@@ -159,6 +160,7 @@ Status Code 200
 
 ```sh
 /api/properties/property_id
+/api/images/image_index
 ```
 
 DELETE property example
@@ -173,7 +175,7 @@ DELETE image example
 
 ```sh
 
-{uniqueID: Number, propID: Number, imageUrl: String, description: String}
+{uniqueID: Number, propID: Number, index:Number, imageUrl: String, description: String}
 
 ```
 
