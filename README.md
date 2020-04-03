@@ -43,11 +43,11 @@ npm install
 ### Object Format
 
 #### Data Properties
-| Name       | Type   | Description                       |
-| ---------- |:------:| ---------------------------------:|
-| Unique ID  | Number | Unique ID for each Object.        |
-| prop ID    | Number | The ID number of a specific prop. |
-| images     | Array  | Array of Image objects.           |
+| Name           | Type   | Description                       |
+| -------------- |:------:| ---------------------------------:|
+| property name  | String | Name of Property        |
+| property ID    | Number | The ID number of a specific prop. |
+| images         | Array  | Array of Image objects.           |
 
 
 #### Data Sub-Properties
@@ -59,12 +59,13 @@ npm install
 
 ```sh
 Schema = {
-          uniqueID: Number,
+          propertyName: String,
           propID: Number,
           images: [{image}]
           }
           
-image: {index: Number,
+image: {
+        index: Number,
         url: String,
         description: String
         }
@@ -73,32 +74,24 @@ image: {index: Number,
 ### GET
 
 ```sh
-/api/photos
+/api/properties/property_id
 ```
-GET photo by prop ID example
+GET property by prop ID example
 
 ```sh
 
-[ {prop ID: 1,
+  {
+   property_name: 'northridge'
+   property ID: 1,
    images: [ {index: 1,
               url: {AWS.url.1},
               description: {random description}
               },
               {index: 2,
-              url: {AWS.url.2},
-              description: {random description}
+               url: {AWS.url.2},
+               description: {random description}
               }]
-   },
-   {prop ID: 1,
-   images: [ {index: 1,
-              url: {AWS.url.1},
-              description: {random description}
-              },
-              {index: 2,
-              url: {AWS.url.2},
-              description: {random description}
-              }]},
-   }]           
+   }      
 
 ```
 
@@ -106,16 +99,25 @@ RESPONSE:
 ```sh
 Status Code 200
 and
-array of objects (see example above)
+an object (see example above)
 ```
 
 ### POST
 
 ```sh
-/api/photos
+/api/properties
+/api/images
 ```
 
-POST photo example
+POST property example
+
+```sh
+
+{propID: Number, property_name: String, images: Array}
+
+```
+
+POST image example
 
 ```sh
 
@@ -130,14 +132,21 @@ Status Code 201
 ### UPDATE
 
 ```sh
-/api/photos/id
+/api/properties/property_id
 ```
 
-PUT photo example
+PUT property example
 
 ```sh
 
-(/api/photos, {uniqueID: Number, propID: Number, imageUrl: String, description: String}
+{uniqueID: Number, propID: Number, property_name: String}
+
+```
+ PUT image example
+
+```sh
+
+{uniqueID: Number, propID: Number, imageUrl: String, description: String}
 
 ```
 
@@ -149,16 +158,25 @@ Status Code 200
 ### DELETE
 
 ```sh
-/api/photos/id
+/api/properties/property_id
 ```
 
-DELETE photo example
+DELETE property example
+
+```sh
+
+{uniqueID: Number, propID: Number, property_name: String}
+
+```
+
+DELETE image example
 
 ```sh
 
 {uniqueID: Number, propID: Number, imageUrl: String, description: String}
 
 ```
+
 RESPONSE:
 ```sh
 Status Code 200
