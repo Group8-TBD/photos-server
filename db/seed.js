@@ -12,13 +12,15 @@ var url = 'https://mtnolympusimages.s3-us-west-1.amazonaws.com/'
 
 //Seed 100 listings
 var seedDatabase = (url) => {
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 5; i++) {
     var imageArray = [];
     for (var j =0; j < 21; j++) {
       var newImage = createImage(url, i, j);
       imageArray.push(newImage)
     }
-    addToDb(imageArray, i)
+    // addToDb(imageArray, i)
+    console.log(imageArray)
+
   }
   return;
 }

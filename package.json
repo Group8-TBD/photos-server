@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Mtn photo component",
   "author": "Austin Capaviela",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -24,6 +24,7 @@
     "axios": "^0.19.2",
     "babel-watch": "^7.0.0",
     "body-parser": "^1.19.0",
+    "csv-writer": "^1.6.0",
     "enzyme": "^3.11.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
@@ -50,7 +51,7 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^25.1.0",
     "mini-css-extract-plugin": "^0.4.3",
@@ -64,5 +65,14 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.3",
     "webpack-visualizer-plugin": "^0.1.11"
-  }
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Group8-TBD/photos-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Group8-TBD/photos-server/issues"
+  },
+  "homepage": "https://github.com/Group8-TBD/photos-server#readme"
 }
