@@ -133,7 +133,7 @@ Status Code 201
 
 ```sh
 /api/properties/property_id
-/api/properties/image_index
+/api/properties/image_id
 ```
 
 PUT property example
@@ -160,7 +160,7 @@ Status Code 200
 
 ```sh
 /api/properties/property_id
-/api/images/image_index
+/api/images/image_id
 ```
 
 DELETE property example
