@@ -21,3 +21,5 @@ let createBundle = (url) => {
 }
 
 const photoBucket = createBundle(bucketUrl);
+
+module.exports = photoBucket;
