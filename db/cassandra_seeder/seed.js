@@ -36,3 +36,23 @@ const createRecords = () => {
   return records;
 }
 
+const copies = 5
+let count = 1;
+
+let copyRecords = () => {
+  if (count < copies) {
+    let records = createRecords();
+    csvWriter.writeRecords(records)
+      .then(()=> {
+        console.log(`made ${count} copies`)
+        copyRecords();
+      })
+      .catch((err) => {
+        console.log(err, `there is an error on the ${count} copy`)
+      })
+  } else {
+    console.log(`Mission Complete, ${count} has been made`)
+  }
+}
+
+copyRecords();
