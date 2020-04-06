@@ -46,8 +46,7 @@ let copyRecords = () => {
   if (count < copies) {
     let records = createRecords();
     if (count === checkpointOne || count === checkpointTwo || count === checkpointThree) {
-      console.log(`${count} has been made`)
-      console.timeLog('makeCopies')
+      console.log(`${count} copies has been made`)
     }
     csvWriter.writeRecords(records)
       .then(()=> {
@@ -63,4 +62,5 @@ let copyRecords = () => {
   }
 }
 console.time('makeCopies')
+console.log('initiating copier')
 copyRecords();
