@@ -9,7 +9,7 @@ let createImage =  (url, i, j) => {
 
 let createBundle = (url) => {
   const container = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     let imageArray = [];
     for (let j = 0; j < 21; j++) {
       const newImage = createImage(url, i, j);
