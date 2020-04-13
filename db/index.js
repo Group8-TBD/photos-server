@@ -1,30 +1,22 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mtnOlympus');
+const pg = require ('pg');
 
-var listingSchema = mongoose.Schema({
-  propId: Number,
-  images: [{
-    index: Number,
-    url: String,
-    description: String}]
+const pool = new pg.Pool({
+  user: 'patmac510',
+  host: 'localhost',
+  database: 'properties'
 });
 
-var Listing = mongoose.model('Listing', listingSchema);
+pool.on('error', (err, client) => {
+  console.error('unable to turn on pool (╯°□°）╯︵ ┻━┻', err);
+  process.exit(-1);
+});
 
-//Query the database for photos from specific propId
-var getListing = (index, callback) => {
-  var listing = Listing.find({propId: index}, (err,results) => {
-    if (err) {
-      callback(err, '')
-    } else {
-      callback(null, results)
-    }
-  })
-}
+pool.connect((err) => {
+  if (err) {
+    console.error('cannot connect to pool (╯°□°）╯︵ ┻━┻')
+  } else {
+    console.log('Connection with PostGreSQL established')
+  }
+})
 
-module.exports  = {
-  listingSchema,
-  Listing,
-  getListing
-}
-
+module.exports = pool;

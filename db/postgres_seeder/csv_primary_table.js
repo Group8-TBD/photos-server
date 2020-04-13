@@ -1,10 +1,12 @@
 const photoBucket = require('../seed_data.js');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const faker = require('faker');
 
 const csvWriter = createCsvWriter({
   path: './seed_records/primary_seed.csv',
   header: [
     { id: 'property_id', title: 'property_id' },
+    { id: 'property_name', title: 'property_name'}
   ]
 })
 
@@ -15,6 +17,7 @@ const createRecords = () => {
   for (var i = 0; i < photoBucket.length; i++) {
     let record = {
       property_id: propID,
+      property_name: faker.lorem.text(),
     }
     records.push(record)
     propID++
