@@ -15,20 +15,17 @@ const postImage = (params, callback) => {
   db.query(query, params, callback);
 }
 
-// const test = getImage([100], (err, data) => {
-//   if (err) {
-//     console.log(err, 'failed')
-//   } else {
-//     console.log(data.rows[0])
-//   }
-// })
+const postProperty = (property_name, callback) => {
+  const query = `INSERT INTO housing.properties (property_name) VALUES ($1)`;
+  db.query(query, property_name, callback);
+}
 
-const array = [1, '0,20', '(╯°□°）╯︵ ┻━┻']
+const updateImage = (params, callback) => {
+  const query = `UPDATE housing.images SET property_id = $1, url = $3, description= $4 WHERE images_id = $2`;
+  db.query(query, params, callback);
+}
 
-const test = postImage(array, (err) => {
-  if (err) {
-    console.log(err, 'failed')
-  } else {
-    console.log('success')
-  }
-})
+const deleteImage = (image_id, callback) => {
+  const query = `DELETE FROM housing.images WHERE image_id = $1`;
+  db.query(query, image_id, callback);
+}
