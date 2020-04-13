@@ -29,3 +29,29 @@ const deleteImage = (image_id, callback) => {
   const query = `DELETE FROM housing.images WHERE image_id = $1`;
   db.query(query, image_id, callback);
 }
+
+const deleteProperty = (property_id, callback) => {
+  const deleteImages = (property_id, callback) => {
+    const query = `DELETE FROM housing.images WHERE property_id = $1`;
+    db.query(query, property_id, callback);
+  }
+  deleteImages(property_id, (err) => {
+    if (err) {
+      console.log(err, 'images cannot be deleted (╯°□°）╯︵ ┻━┻')
+    } else {
+      console.log('images deleted proceeding to next phase')
+    }
+  })
+  const query = `DELETE FROM housing.properties WHERE property_id = $1`;
+  db.query(query, property_id, callback);
+}
+
+module.exports = {
+  getImage,
+  getImages,
+  postImage,
+  postProperty,
+  updateImage,
+  deleteImage,
+  deleteProperty,
+}

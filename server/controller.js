@@ -56,8 +56,8 @@ const updateImage = (req, res) => {
     data.description,
   ];
   Models.updateImage(params, (err) => {
-    if (err) => {
-      console.log(err, 'unable to update object')
+    if (err) {
+      console.log(err, 'unable to update object (╯°□°）╯︵ ┻━┻')
     } else {
       res.status(200).send('object updated')
     }
@@ -66,10 +66,30 @@ const updateImage = (req, res) => {
 
 const deleteImage = (req, res) => {
   Models.deleteImage([req.params.image_id], (err) => {
-    if (err) => {
-      console.log(err, 'unable to delete image file')
+    if (err) {
+      console.log(err, 'unable to delete image file (╯°□°）╯︵ ┻━┻')
     } else {
       res.status(200).send('image deleted')
     }
   })
+}
+
+const deleteProperty = (req, res) => {
+  Models.deleteProperty([req.params.property_id], (err) => {
+    if (err) {
+      console.log(err, 'failed to delete property (╯°□°）╯︵ ┻━┻')
+    } else {
+      res.status(200).send('property deleted')
+    }
+  })
+}
+
+module.exports = {
+  getImage,
+  getImages,
+  postImage,
+  postProperty,
+  updateImage,
+  deleteImage,
+  deleteProperty,
 }
