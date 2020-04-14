@@ -5,7 +5,7 @@ const getImages = (req, res) => {
     if (err) {
       console.log(err, 'unable to retrieve images for property (╯°□°）╯︵ ┻━┻')
     } else {
-      res.status(200).send(data.rows[0])
+      res.status(200).send(data.rows)
     }
   })
 }
@@ -15,7 +15,7 @@ const getImage = (req, res) => {
     if (err) {
       console.log(err, 'unable to retrieve image (╯°□°）╯︵ ┻━┻')
     } else {
-      res.status(200).send(data.rows[0])
+      res.status(200).send(data.rows)
     }
   })
 }

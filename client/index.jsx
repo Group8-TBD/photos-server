@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ImageHeader from './ImageHeader.jsx';
 import ImageCarousel from './ImageCarousel.jsx';
-import $ from 'jquery';
+// import $ from 'jquery';
+import axios from 'axios'
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
     }
 
     this.changeView = this.changeView.bind(this);
+    this.getImages = this.getImages.bind(this);
 
   }
 
@@ -27,18 +29,18 @@ class App extends React.Component {
 
   //GET request on mount to pull images by propId
   componentDidMount() {
-    var index = 1;
+    this.getImages()
+  }
 
-    $.ajax({
-      type: 'GET',
-      url:'/photos',
-      data: {propId:index},
-      success: (results) => {
-        console.log(results)
-        // console.log('from index.jsx GET', results[0].images[0].url)
-        this.setState({images: results[0].images})
-      }
-    })
+  getImages() {
+    const property_id = 1
+    axios.get(`/properties/${property_id}`)
+      .then((response) => {
+        console.log(response.data)
+        this.setState({
+          images: response.data
+        })
+      })
   }
 
   render() {

@@ -1,7 +1,7 @@
 const db = require('./index.js');
 
 const getImages = (property_id, callback) => {
-  const query = `SELECT * FROM housing.properties WHERE property_id = $1`;
+  const query = `SELECT * FROM housing.images WHERE property_id = $1`;
   db.query(query, property_id, callback);
 }
 

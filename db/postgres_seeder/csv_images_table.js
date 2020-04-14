@@ -36,7 +36,7 @@ const createRecords = () => {
   return records;
 }
 
-const copies = 100000
+const copies = 50000
 const checkpointOne = Math.floor(copies * .25)
 const checkpointTwo = Math.floor(copies * .5)
 const checkpointThree = Math.floor(copies * .75)

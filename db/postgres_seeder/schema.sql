@@ -27,6 +27,6 @@ COPY housing.properties FROM '/Users/patmac510/Documents/hackreactor/SDC-project
 
 COPY housing.images FROM '/Users/patmac510/Documents/hackreactor/SDC-project/photo-server/db/postgres_seeder/seed_records/images_seed.csv' DELIMITER ',' CSV HEADER;
 
-ALTER SEQUENCE housing.properties_property_id_seq RESTART WITH 10000001;
+ALTER SEQUENCE housing.properties_property_id_seq RESTART WITH 5000001;
 
-ALTER SEQUENCE housing.images_image_id_seq RESTART WITH 210000001;
+ALTER SEQUENCE housing.images_image_id_seq RESTART WITH 105000001;
