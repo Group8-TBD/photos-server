@@ -33,7 +33,10 @@ class App extends React.Component {
   }
 
   getImages() {
-    const property_id = 1
+    const randomId = () => {
+      return Math.floor(Math.random() * (5000000 - 1) + 1)
+    }
+    const property_id = randomId()
     axios.get(`/properties/${property_id}`)
       .then((response) => {
         console.log(response.data)
