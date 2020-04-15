@@ -84,6 +84,10 @@ const deleteProperty = (req, res) => {
   })
 }
 
+const loadTest = (req, res) => {
+  res.send('loaderio-9c90027235fe92f2ba89250c2f6f4298')
+}
+
 module.exports = {
   getImage,
   getImages,
@@ -92,4 +96,5 @@ module.exports = {
   updateImage,
   deleteImage,
   deleteProperty,
+  loadTest,
 }
