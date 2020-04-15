@@ -85,7 +85,7 @@ const deleteProperty = (req, res) => {
 }
 
 const loadTest = (req, res) => {
-  res.send('loaderio-9c90027235fe92f2ba89250c2f6f4298')
+  res.send('loaderio-1b81eae3cf13a2743a6b591491d17f9f')
 }
 
 module.exports = {

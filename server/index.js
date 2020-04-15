@@ -25,7 +25,7 @@
   app.patch('/images', Controller.updateImage);
   app.delete('/images/:image_id', Controller.deleteImage);
   app.delete('/properties/property_id', Controller.deleteProperty);
-  app.get('/loaderio-9c90027235fe92f2ba89250c2f6f4298/',Controller.loadTest)
+  app.get('/loaderio-1b81eae3cf13a2743a6b591491d17f9f',Controller.loadTest)
 
 
 
