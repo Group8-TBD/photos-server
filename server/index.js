@@ -2,6 +2,7 @@
   const newRelic = require('newrelic')
   const express = require('express')
   const app = express()
+  const cors = require('cors')
   const port = 3001
   const db = require('../db/index.js')
   const bodyParser = require('body-parser')
@@ -10,7 +11,7 @@
 
 
   //***************MIDDLEWARE**************\\
-
+  app.use(cors())
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(express.static('public'))

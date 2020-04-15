@@ -1,9 +1,8 @@
 
-const bucketUrl = 'https://mtnolympusimages.s3-us-west-1.amazonaws.com/'
+const bucketUrl = 'https://tbd-sdc.s3-us-west-1.amazonaws.com/'
 
 let createImage =  (url, i, j) => {
-  url = url + i + "/" + j;
-  const newImage = url + ".jpg";
+  const newImage = `${url}prop+(${i + 1})/image+(${j + 1}).jpg`
   return newImage;
 }
 

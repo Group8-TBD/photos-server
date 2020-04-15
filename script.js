@@ -3,10 +3,10 @@ import { sleep } from 'k6';
 
 export let options = {
   stages: [
-    { duration: '1s', target: 500 }, // below normal load
+    { duration: '30s', target: 500 }, // below normal load
     // { duration: '5m', target: 100 },
-    { duration: '1m', target: 2000 }, // normal load
-    { duration: '1m', target: 500 },
+    { duration: '1m', target: 1000 }, // normal load
+    { duration: '30s', target: 500 },
     // { duration: '2m', target: 1000 }, // around the breaking point
     // { duration: '5m', target: 300 },
     // { duration: '2m', target: 2000 }, // beyond the breaking point
@@ -15,13 +15,17 @@ export let options = {
   ],
 };
 
+let randomId = () => {
+  return Math.floor(Math.random() * (5000000 - 1) + 1)
+}
+
 export default function() {
   const BASE_URL = 'http://localhost:3001'; // make sure this is not production
 
   let responses = http.batch([
     [
       'GET',
-      `${BASE_URL}/properties/10`,
+      `${BASE_URL}/properties/${randomId()}`,
       null,
       { tags: { name: 'get all images' } },
     ],
