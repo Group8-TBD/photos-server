@@ -1,9 +1,11 @@
 const pg = require ('pg');
 
 const pool = new pg.Pool({
-  user: 'patmac510',
-  host: 'localhost',
-  database: 'properties'
+  user: 'power_user',
+  host: 'ec2-54-215-233-159.us-west-1.compute.amazonaws.com',
+  port: 5432,
+  password: 'password',
+  database: 'properties',
 });
 
 pool.on('error', (err, client) => {
