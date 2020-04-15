@@ -3,7 +3,7 @@
   const express = require('express')
   const app = express()
   const cors = require('cors')
-  const port = 80
+  const port = 3001
   const db = require('../db/index.js')
   const bodyParser = require('body-parser')
   const Controller = require('./controller.js')
